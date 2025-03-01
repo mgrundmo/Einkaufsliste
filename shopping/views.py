@@ -6,7 +6,7 @@ def index(request):
     # initialize list
     items = []
     # read existing shopping list from file
-    liste = open("shopping/list.txt", "r")
+    liste = open("list.txt", "r")
     data = liste.read()
     # store items in list
     items = data.split("\n")
@@ -24,7 +24,7 @@ def add(request):
         newentry = request.POST.get('newentry')
         # store new item to list and save as txt file
         items.append(newentry)
-        liste = open("shopping/list.txt", "a")
+        liste = open("list.txt", "a")
         for item in items:
             liste.write(f"{item}\n")
         liste.close()
@@ -36,7 +36,7 @@ def delete(request):
     # initialize list
     items = []
     # read existing items from txt file
-    liste = open("shopping/list.txt", "r")
+    liste = open("list.txt", "r")
     data = liste.read()
     items = data.split("\n")
     liste.close()
@@ -48,7 +48,7 @@ def delete(request):
         tmp = [x for x in items if x]
         items = tmp
         # store updated list as txt file
-        liste = open("shopping/list.txt", "w")
+        liste = open("list.txt", "w")
         for item in items:
             liste.write(f"{item}\n")
         liste.close()
