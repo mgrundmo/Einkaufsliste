@@ -24,7 +24,7 @@ def add(request):
         newentry = request.POST.get('newentry')
         # store new item to list and save as txt file
         items.append(newentry)
-        liste = open("list.txt", "a")
+        liste = open("Einkaufsliste/shopping/list.txt", "a")
         for item in items:
             liste.write(f"{item}\n")
         liste.close()
@@ -36,7 +36,7 @@ def delete(request):
     # initialize list
     items = []
     # read existing items from txt file
-    liste = open("list.txt", "r")
+    liste = open("Einkaufsliste/shopping/list.txt", "r")
     data = liste.read()
     items = data.split("\n")
     liste.close()
@@ -48,7 +48,7 @@ def delete(request):
         tmp = [x for x in items if x]
         items = tmp
         # store updated list as txt file
-        liste = open("list.txt", "w")
+        liste = open("Einkaufsliste/shopping/list.txt", "w")
         for item in items:
             liste.write(f"{item}\n")
         liste.close()
