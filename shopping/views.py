@@ -6,7 +6,7 @@ def index(request):
     # initialize list
     items = []
     # read existing shopping list from file
-    liste = open("list.txt", "r")
+    liste = open("Einkaufsliste/shopping/list.txt", "r")
     data = liste.read()
     # store items in list
     items = data.split("\n")
