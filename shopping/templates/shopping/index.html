@@ -1,0 +1,15 @@
+{% extends "shopping/layout.html" %}
+
+{% block body %}
+    <h1>Einkaufsliste</h1>
+    <ul>
+        {% for item in items %}
+        <form action="{% url 'shopping:delete' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="item" value="{{ item }}" readonly>
+            <input type="submit" value="del">
+        </form>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'shopping:add' %}">neuer Eintrag</a>
+{% endblock %}
