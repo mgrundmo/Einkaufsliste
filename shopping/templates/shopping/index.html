@@ -7,7 +7,7 @@
         <form action="{% url 'shopping:delete' %}" method="post">
             {% csrf_token %}
             <input type="text" name="item" value="{{ item }}" readonly>
-            <input type="submit" value="-">
+            <input type="submit" value=" - ">
         </form>
         {% endfor %}
     </ul>
@@ -15,7 +15,7 @@
         <form action="{% url 'shopping:add' %}" method="post">
             {% csrf_token %}
             <input type="text" placeholder="neuer Eintrag" name="newentry">
-            <input type="submit" value="+">
+            <input type="submit" value=" + ">
         </form>
     </ul>
 {% endblock %}
