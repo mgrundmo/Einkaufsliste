@@ -50,6 +50,9 @@ def delete(request):
         # receive item to be deleted from form
         delete = request.POST.get('item')
         items.remove(delete)
+        # remove blank list entries
+        tmp = [x for x in items if x]
+        items = tmp
         # store updated list as txt file
         liste = open(list_location, "w")
         for item in items:
