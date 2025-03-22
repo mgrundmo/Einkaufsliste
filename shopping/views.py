@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse 
 
-#list_location = "shopping/list.txt" #for testing
-list_location = "Einkaufsliste/shopping/list.txt" #for deployement
+list_location = "shopping/list.txt" #for testing
+#list_location = "Einkaufsliste/shopping/list.txt" #for deployement
 
 def index(request):
     # initialize list
